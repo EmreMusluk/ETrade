@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ETrade.Core\ETrade.Core.csproj" />
+    <ProjectReference Include="..\ETrade.Dal\ETrade.Dal.csproj" />
+    <ProjectReference Include="..\ETrade.DTO\ETrade.DTO.csproj" />
+    <ProjectReference Include="..\ETrade.Entity\ETrade.Entity.csproj" />
+    <ProjectReference Include="..\ETrade.Repository\ETrade.Repository.csproj" />
+    <ProjectReference Include="..\ETrade.Uw\ETrade.Uw.csproj" />
+  </ItemGroup>
+
+</Project>

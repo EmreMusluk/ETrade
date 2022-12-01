@@ -1,0 +1,59 @@
+﻿@model ETrade.UI.Models.ViewModel.BasketDetailModel
+@*@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add</h1>*@
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <div>
+                <label>Ürün</label>
+                <select name="ProductId" class="form-control">
+                    @foreach (var item in Model.ProductsDTO)
+                    {
+                        <option value="@item.Id">@item.ProductName</option>
+                    }
+
+                </select>
+            </div>
+            <div>
+                <label>Miktar</label>
+                <input class="form-control" type="Text" asp-for="Amount" />
+            </div>
+            @*<input type="submit" value="Ekle" />*@
+            <input class="btn btn-primary" type="submit" value="Ekle" />
+            <a class="btn btn-primary" href="/Payment/Index">Siparişi Tamamla</a>
+        </form>
+        <table class="table table-hover">
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Miktar</th>
+                <th>Birim</th>
+                <th>KDV</th>
+                <th>Birim Fiyatı</th>
+                <th>ToplamFiyat</th>
+            </tr>
+            @foreach (var item in Model.BasketDetailDTO)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Amount</td>
+                    <td>@item.UnitName</td>
+                    <td>@item.Ratio</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.Total</td>
+                    <td><a class="btn btn-primary" href="/BasketDetail/Update/@item.Id/?productId=@item.ProductId">Değiştir</a></td>
+                    <td><a class="btn btn-danger" href="/BasketDetail/Delete/@item.Id/?productId=@item.ProductId">Sil</a></td>
+                </tr>
+                
+            }
+
+        </table>
+    </div>
+    <div>
+        <h4>Toplam :@Model.BasketDetailDTO.Count() Adet Ürün  @Model.BasketDetailDTO.Sum(x=>x.Total)</h4>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model ETrade.UI.Models.ViewModel.UsersModel
+<div class="row">
+    <div class="col-md-5">
+        <h4>Register</h4>
+        <form method="post">
+            <p >@Model.Msg</p>
+            <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="staticEmail" placeholder="mail@example.com" name="Users.Mail">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" name="Users.Password">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputAv" class="col-sm-2 col-form-label">Avenue</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputAv" name="Users.Avenue">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputSt" class="col-sm-2 col-form-label">Street</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputSt" name="Users.Street">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputNo" class="col-sm-2 col-form-label">No</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputNo" name="Users.No">
+                </div>
+
+            </div>
+            <div class="mb-3 row">
+                <label for="inputNo" class="col-sm-2 col-form-label">Ad Soyad  </label>
+                <div class="col-sm-10">
+                    <input  type="text" class="form-control" id="inputNo" name="Users.EntityName">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">County</label>
+                <select class="form-control" asp-for="@Model.Users.CountyId">
+                    @foreach (var item in Model.Counties)
+                    {
+                        <option value="@item.Id">@item.Description</option>
+                    }
+                    
+                </select>
+            </div>
+            <input type="submit" value="OK" />
+        </form>
+    </div>
+</div>
+@*<script>
+    document.getElementById("err").dis
+</script>*@

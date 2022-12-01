@@ -1,0 +1,4 @@
+Fluent Api Migration koduna Update Database komutundan evvel müdahale edilmesidir.
+En çok NVARChar(Max)'ý NVARChar(50) yapmak,
+onDelete: ReferentialAction.Cascade' i  onDelete: ReferentialAction.NoAction çevirmek için kullanýlýr.
+cascade =birleþtirme
